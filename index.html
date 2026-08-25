@@ -1,0 +1,3340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Shiva Singh — DevOps & Cloud Engineer specializing in Microsoft Azure, Terraform, CI/CD, Docker, Kubernetes, DevSecOps and cloud automation."
+  />
+
+  <meta
+    name="keywords"
+    content="Shiva Singh, DevOps Engineer, Azure, Terraform, Azure DevOps, Docker, Kubernetes, CI/CD, DevSecOps, GitHub Actions, ArgoCD, Grafana, Prometheus"
+  />
+
+  <title>Shiva Singh | DevOps & Cloud Engineer</title>
+
+  <!-- Devicon -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
+
+  <style>
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --panel: rgba(15, 30, 50, 0.82);
+      --panel-light: rgba(21, 40, 65, 0.82);
+
+      --text: #f5f9ff;
+      --muted: #a7b7cc;
+      --muted2: #7488a3;
+
+      --line: rgba(137, 186, 255, 0.16);
+
+      --azure: #35c9ff;
+      --azure2: #0089ff;
+      --blue: #5878ff;
+      --purple: #9c72ff;
+      --pink: #ed70dc;
+      --green: #4ee6a4;
+      --orange: #ffb454;
+
+      --shadow:
+        0 30px 90px rgba(0, 0, 0, 0.38);
+
+      --max: 1180px;
+    }
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 5% 5%,
+          rgba(0, 169, 255, 0.20),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 95% 10%,
+          rgba(116, 89, 255, 0.20),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(0, 198, 255, 0.07),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #07111f 0%,
+          #0a1628 45%,
+          #0b1225 100%
+        );
+
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      z-index: -1;
+
+      background-image:
+        linear-gradient(
+          rgba(120, 190, 255, 0.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(120, 190, 255, 0.045) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 450px;
+      height: 450px;
+
+      left: -200px;
+      bottom: -200px;
+
+      border-radius: 50%;
+
+      background: rgba(0, 153, 255, 0.08);
+
+      filter: blur(100px);
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background:
+        rgba(6, 15, 28, 0.76);
+
+      backdrop-filter: blur(22px) saturate(150%);
+
+      border-bottom:
+        1px solid rgba(145, 196, 255, 0.10);
+
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.20);
+    }
+
+    .nav-inner {
+      height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .brand span {
+      color: var(--azure);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--azure);
+    }
+
+    .nav-cta {
+      padding: 9px 15px;
+
+      border-radius: 9px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 156, 255, 0.20),
+          rgba(112, 89, 255, 0.20)
+        );
+
+      border: 1px solid rgba(80, 191, 255, 0.25);
+
+      color: #dff7ff !important;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: calc(100vh - 74px);
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(400px, 0.95fr);
+
+      align-items: center;
+
+      gap: 70px;
+
+      padding: 85px 0 65px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(78, 230, 164, 0.25);
+
+      background:
+        rgba(20, 62, 52, 0.38);
+
+      color: #b9efd7;
+
+      font-size: 0.80rem;
+      font-weight: 700;
+
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 14px rgba(78, 230, 164, 0.8);
+    }
+
+    .hero-label {
+      color: var(--azure);
+
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        monospace;
+
+      font-size: 0.82rem;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 8vw, 7.4rem);
+
+      line-height: 0.88;
+
+      letter-spacing: -6px;
+
+      margin-bottom: 24px;
+
+      font-weight: 950;
+    }
+
+    .hero-name {
+      display: block;
+
+      /* Bright premium gradient inspired by the reference: clean white on
+         the left, then icy-cyan, Azure blue and a soft purple finish. */
+      background:
+        linear-gradient(
+          100deg,
+          #ffffff 0%,
+          #f4fcff 20%,
+          #d9f6ff 38%,
+          #9fddff 55%,
+          #86b7ff 72%,
+          #9b8cff 88%,
+          #b39aff 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      /* Very subtle glow — keeps the letters bright instead of muddy/dark. */
+      text-shadow:
+        0 0 22px rgba(120, 205, 255, 0.10);
+    }
+
+    .hero-title {
+      display: block;
+
+      font-size: clamp(2rem, 4vw, 3.5rem);
+
+      letter-spacing: -2px;
+
+      line-height: 1.05;
+
+      margin-top: 18px;
+
+      background:
+        linear-gradient(
+          100deg,
+          var(--azure),
+          #7194ff 50%,
+          var(--purple)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 700px;
+
+      color: var(--muted);
+
+      font-size: 1.08rem;
+
+      line-height: 1.8;
+
+      margin-top: 24px;
+    }
+
+    .hero-description strong {
+      color: #e7f5ff;
+    }
+
+    .hero-tech-row {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-top: 22px;
+    }
+
+    .mini-tech {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 7px 11px;
+
+      border-radius: 8px;
+
+      background:
+        rgba(13, 31, 51, 0.78);
+
+      border: 1px solid var(--line);
+
+      color: #b9cbe0;
+
+      font-size: 0.79rem;
+      font-weight: 650;
+    }
+
+    .mini-tech i {
+      font-size: 1rem;
+      color: var(--azure);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 12px 18px;
+
+      border-radius: 10px;
+
+      border: 1px solid var(--line);
+
+      background:
+        rgba(16, 33, 54, 0.82);
+
+      font-weight: 800;
+
+      font-size: 0.90rem;
+
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(91, 202, 255, 0.42);
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary {
+      border: 0;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #008edb,
+          #536df2,
+          #8759d9
+        );
+
+      box-shadow:
+        0 12px 35px rgba(47, 132, 255, 0.22);
+    }
+
+    /* =========================================================
+       TERMINAL
+    ========================================================= */
+
+    .terminal-wrap {
+      position: relative;
+    }
+
+    .terminal-glow {
+      position: absolute;
+      inset: -50px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(36, 173, 255, 0.16),
+          transparent 65%
+        );
+
+      filter: blur(25px);
+
+      z-index: -1;
+    }
+
+    .terminal {
+      overflow: hidden;
+
+      border-radius: 19px;
+
+      border:
+        1px solid rgba(110, 190, 255, 0.20);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(11, 27, 45, 0.96),
+          rgba(6, 18, 32, 0.96)
+        );
+
+      box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.42),
+        0 0 0 1px rgba(74, 167, 255, 0.04);
+    }
+
+    .terminal-header {
+      height: 50px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 0 17px;
+
+      border-bottom:
+        1px solid rgba(128, 181, 226, 0.12);
+
+      color: #7891aa;
+
+      font-family:
+        ui-monospace,
+        monospace;
+
+      font-size: 0.78rem;
+    }
+
+    .terminal-lights {
+      display: flex;
+      gap: 6px;
+
+      margin-right: 12px;
+    }
+
+    .terminal-lights span {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #34495c;
+    }
+
+    .terminal-body {
+      padding: 26px;
+
+      font:
+        13.5px/1.85
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        monospace;
+
+      color: #b9ccdf;
+
+      overflow-x: auto;
+    }
+
+    .terminal-comment {
+      color: #617b94;
+    }
+
+    .terminal-command {
+      color: var(--azure);
+    }
+
+    .terminal-key {
+      color: #9eacff;
+    }
+
+    .terminal-value {
+      color: #61e6a8;
+    }
+
+    .terminal-purple {
+      color: #d08bff;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+
+      width: 7px;
+      height: 16px;
+
+      vertical-align: -3px;
+
+      background: var(--azure);
+
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .terminal-status {
+      margin-top: 18px;
+
+      padding: 12px 14px;
+
+      border-radius: 10px;
+
+      background:
+        rgba(30, 73, 65, 0.30);
+
+      border:
+        1px solid rgba(78, 230, 164, 0.15);
+
+      color: #a9e9ce;
+
+      font-size: 0.78rem;
+    }
+
+    /* =========================================================
+       STATS
+    ========================================================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 13px;
+
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 16px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 13px;
+
+      background:
+        rgba(12, 29, 48, 0.70);
+
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+
+      font-size: 1.25rem;
+
+      color: #eef8ff;
+    }
+
+    .stat span {
+      display: block;
+
+      color: var(--muted2);
+
+      font-size: 0.72rem;
+
+      margin-top: 3px;
+    }
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 105px 0;
+
+      border-top:
+        1px solid rgba(142, 195, 255, 0.07);
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      color: var(--azure);
+
+      font:
+        800 0.76rem
+        ui-monospace,
+        monospace;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      line-height: 1.1;
+
+      letter-spacing: -1.5px;
+
+      margin-top: 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+
+      max-width: 780px;
+
+      margin-top: 12px;
+
+      font-size: 1rem;
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(19, 39, 64, 0.82),
+          rgba(10, 25, 43, 0.78)
+        );
+
+      box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.20);
+
+      backdrop-filter: blur(15px);
+
+      transition: 0.28s ease;
+    }
+
+    .card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(48, 200, 255, 0.07),
+          transparent 38%,
+          rgba(141, 96, 255, 0.07)
+        );
+
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(83, 190, 255, 0.28);
+
+      box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.30);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 13px;
+
+      background:
+        rgba(39, 154, 220, 0.10);
+
+      border:
+        1px solid rgba(72, 188, 255, 0.16);
+
+      margin-bottom: 17px;
+
+      font-size: 1.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: 0.91rem;
+    }
+
+    /* =========================================================
+       SKILL CARDS
+    ========================================================= */
+
+    .skill-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 25px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        rgba(12, 28, 48, 0.76);
+    }
+
+    .skill-header {
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      margin-bottom: 19px;
+    }
+
+    .skill-header-icon {
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background:
+        rgba(45, 166, 235, 0.10);
+
+      border:
+        1px solid rgba(86, 193, 255, 0.15);
+
+      font-size: 1.35rem;
+    }
+
+    .skill-header h3 {
+      font-size: 1rem;
+    }
+
+    .skill-header p {
+      color: var(--muted2);
+
+      font-size: 0.74rem;
+
+      margin-top: 2px;
+    }
+
+    .chips {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .chip {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 8px 11px;
+
+      border-radius: 9px;
+
+      border:
+        1px solid rgba(135, 184, 230, 0.13);
+
+      background:
+        rgba(5, 18, 32, 0.62);
+
+      color: #c2d2e4;
+
+      font-size: 0.78rem;
+
+      transition: 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color:
+        rgba(71, 193, 255, 0.35);
+
+      color: white;
+
+      transform: translateY(-2px);
+    }
+
+    .chip i {
+      font-size: 1rem;
+    }
+
+    /* =========================================================
+       DEVOPS FLOW
+    ========================================================= */
+
+    .flow {
+      display: grid;
+
+      grid-template-columns:
+        repeat(6, 1fr);
+
+      gap: 12px;
+
+      align-items: center;
+    }
+
+    .flow-item {
+      position: relative;
+
+      padding: 20px 12px;
+
+      text-align: center;
+
+      border-radius: 15px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        rgba(14, 32, 53, 0.75);
+    }
+
+    .flow-item i {
+      display: block;
+
+      font-size: 1.7rem;
+
+      margin-bottom: 8px;
+
+      color: var(--azure);
+    }
+
+    .flow-item strong {
+      display: block;
+
+      font-size: 0.83rem;
+    }
+
+    .flow-item span {
+      display: block;
+
+      color: var(--muted2);
+
+      font-size: 0.68rem;
+
+      margin-top: 2px;
+    }
+
+    .flow-arrow {
+      position: absolute;
+
+      right: -17px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--azure);
+
+      z-index: 2;
+
+      font-weight: 900;
+    }
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .timeline {
+      border-left:
+        1px solid rgba(77, 173, 235, 0.25);
+
+      margin-left: 8px;
+
+      padding-left: 30px;
+    }
+
+    .role {
+      position: relative;
+
+      margin-bottom: 42px;
+    }
+
+    .role:last-child {
+      margin-bottom: 0;
+    }
+
+    .role::before {
+      content: "";
+
+      position: absolute;
+
+      left: -37px;
+
+      top: 7px;
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: var(--azure);
+
+      box-shadow:
+        0 0 0 6px rgba(28, 103, 142, 0.18),
+        0 0 20px rgba(52, 201, 255, 0.6);
+    }
+
+    .role-meta {
+      color: var(--azure);
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.5px;
+    }
+
+    .role h3 {
+      font-size: 1.2rem;
+
+      margin: 5px 0 8px;
+    }
+
+    .role-company {
+      color: #b8cbe0;
+
+      font-size: 0.88rem;
+
+      margin-bottom: 10px;
+    }
+
+    .role ul {
+      padding-left: 20px;
+
+      color: var(--muted);
+
+      font-size: 0.90rem;
+    }
+
+    .role li {
+      margin: 7px 0;
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .project-card {
+      display: flex;
+
+      flex-direction: column;
+
+      min-height: 315px;
+    }
+
+    .project-number {
+      color: var(--azure);
+
+      font:
+        800 0.72rem
+        ui-monospace,
+        monospace;
+
+      margin-bottom: 16px;
+    }
+
+    .project-card h3 {
+      font-size: 1.18rem;
+
+      margin-bottom: 9px;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+    }
+
+    .project-bottom {
+      margin-top: auto;
+
+      padding-top: 22px;
+
+      display: flex;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding: 8px 11px;
+
+      border-radius: 8px;
+
+      background:
+        rgba(34, 154, 215, 0.09);
+
+      border:
+        1px solid rgba(87, 188, 239, 0.15);
+
+      color: #a9ddf6;
+
+      font-size: 0.78rem;
+
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 16px;
+    }
+
+    .contact-card {
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 21px;
+
+      border-radius: 15px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+        rgba(13, 31, 52, 0.76);
+
+      transition: 0.25s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(68, 192, 255, 0.30);
+    }
+
+    .contact-icon {
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 11px;
+
+      background:
+        rgba(40, 164, 229, 0.10);
+
+      color: var(--azure);
+
+      font-size: 1.2rem;
+    }
+
+    .contact-card strong {
+      display: block;
+
+      font-size: 0.88rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+
+      font-size: 0.80rem;
+
+      margin-top: 2px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 38px 0;
+
+      text-align: center;
+
+      color: #70859d;
+
+      border-top:
+        1px solid rgba(142, 195, 255, 0.07);
+
+      font-size: 0.82rem;
+    }
+
+    .footer-accent {
+      color: var(--azure);
+    }
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    .top {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 11px;
+
+      background:
+        rgba(11, 30, 50, 0.88);
+
+      border:
+        1px solid rgba(92, 185, 242, 0.20);
+
+      color: var(--azure);
+
+      font-weight: 900;
+
+      box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+
+      transition: 0.25s ease;
+    }
+
+    .top:hover {
+      transform: translateY(-4px);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 980px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-top: 65px;
+      }
+
+      .terminal-wrap {
+        max-width: 760px;
+      }
+
+      .flow {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .flow-arrow {
+        display: none;
+      }
+
+      .grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+
+      .container {
+        width: min(
+          var(--max),
+          calc(100% - 34px)
+        );
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .grid,
+      .skill-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      section {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-description {
+        font-size: 0.96rem;
+      }
+
+      .terminal-body {
+        padding: 20px;
+
+        font-size: 11.5px;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 13px 8px;
+      }
+
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#home" class="brand">
+        SHIVA<span>.DEVOPS</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="nav-cta">Let's Connect →</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main id="home">
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section style="border-top:0; padding-top:0;">
+
+      <div class="container hero">
+
+        <!-- LEFT -->
+
+        <div>
+
+          <div class="availability">
+            <span class="status-dot"></span>
+            Open to DevOps Opportunities
+          </div>
+
+          <div class="hero-label">
+            DevOps & Cloud Engineering
+          </div>
+
+          <h1>
+
+            <span class="hero-name">
+              SHIVA SINGH
+            </span>
+
+            <span class="hero-title">
+              DevOps & Cloud Engineer
+            </span>
+
+          </h1>
+
+          <p class="hero-description">
+
+            I build and automate cloud infrastructure, CI/CD pipelines
+            and DevOps workflows using
+            <strong>Microsoft Azure, Terraform, Git and modern
+            container technologies.</strong>
+
+            Focused on reliable infrastructure, automation,
+            security and continuous delivery.
+
+          </p>
+
+
+          <!-- HERO TECH -->
+
+          <div class="hero-tech-row">
+
+            <span class="mini-tech">
+              <i class="devicon-azure-plain"></i>
+              Azure
+            </span>
+
+            <span class="mini-tech">
+              <i class="devicon-terraform-plain"></i>
+              Terraform
+            </span>
+
+            <span class="mini-tech">
+              <i class="devicon-docker-plain"></i>
+              Docker
+            </span>
+
+            <span class="mini-tech">
+              <i class="devicon-kubernetes-plain"></i>
+              Kubernetes
+            </span>
+
+            <span class="mini-tech">
+              <i class="devicon-github-original"></i>
+              GitHub
+            </span>
+
+            <span class="mini-tech">
+              <i class="devicon-linux-plain"></i>
+              Linux
+            </span>
+
+          </div>
+
+
+          <!-- BUTTONS -->
+
+          <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+              View My Work →
+            </a>
+
+            <a
+              href="https://github.com/singhshivaa"
+              target="_blank"
+              class="btn"
+            >
+              <i class="devicon-github-original"></i>
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/shivasinghit/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              aria-label="Open Shiva Singh's LinkedIn profile"
+            >
+              <i class="devicon-linkedin-plain"></i>
+              LinkedIn ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT TERMINAL -->
+
+        <div class="terminal-wrap">
+
+          <div class="terminal-glow"></div>
+
+          <div class="terminal">
+
+            <div class="terminal-header">
+
+              <div class="terminal-lights">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              shiva@devops:~
+
+            </div>
+
+
+            <div class="terminal-body">
+
+              <div class="terminal-comment">
+                # identity
+              </div>
+
+              <br />
+
+              <span class="terminal-command">
+                shiva@devops:~$
+              </span>
+              whoami
+
+              <br />
+
+              <span class="terminal-value">
+                Shiva Singh
+              </span>
+
+              <br /><br />
+
+
+              <span class="terminal-command">
+                shiva@devops:~$
+              </span>
+              cat profile.json
+
+              <br /><br />
+
+              {
+
+              <br />
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "role"
+              </span>:
+              <span class="terminal-value">
+                "DevOps & Cloud Engineer"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "cloud"
+              </span>:
+              <span class="terminal-value">
+                "Microsoft Azure"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "iac"
+              </span>:
+              <span class="terminal-value">
+                "Terraform"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "containers"
+              </span>:
+              <span class="terminal-value">
+                "Docker + Kubernetes"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "cicd"
+              </span>:
+              <span class="terminal-value">
+                "Azure DevOps + GitHub Actions"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "gitops"
+              </span>:
+              <span class="terminal-value">
+                "Argo CD"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "observability"
+              </span>:
+              <span class="terminal-value">
+                "Prometheus + Grafana"
+              </span>,
+
+              <br />
+
+              &nbsp;&nbsp;
+              <span class="terminal-key">
+                "focus"
+              </span>:
+              <span class="terminal-value">
+                "Automation + DevSecOps"
+              </span>
+
+              <br />
+
+              }
+
+              <br /><br />
+
+              <span class="terminal-command">
+                shiva@devops:~$
+              </span>
+
+              <span class="terminal-purple">
+                ./deploy.sh
+              </span>
+
+              <br />
+
+              <span class="terminal-value">
+                ✓ Infrastructure validated
+              </span>
+
+              <br />
+
+              <span class="terminal-value">
+                ✓ Security checks passed
+              </span>
+
+              <br />
+
+              <span class="terminal-value">
+                ✓ Pipeline ready
+              </span>
+
+              <br /><br />
+
+              <span class="terminal-command">
+                shiva@devops:~$
+              </span>
+
+              <span class="terminal-cursor"></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STATS -->
+
+      <div class="container">
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>1.6+</strong>
+            <span>Years Experience</span>
+          </div>
+
+          <div class="stat">
+            <strong>Azure</strong>
+            <span>Cloud Platform</span>
+          </div>
+
+          <div class="stat">
+            <strong>Terraform</strong>
+            <span>Infrastructure as Code</span>
+          </div>
+
+          <div class="stat">
+            <strong>CI/CD</strong>
+            <span>Automation</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+    ======================================================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            01 / about
+          </div>
+
+          <h2>
+            Engineering with an automation mindset.
+          </h2>
+
+          <p class="lead">
+            DevOps-focused engineer working across cloud infrastructure,
+            Infrastructure as Code, CI/CD automation, containers,
+            monitoring and security-aware delivery workflows.
+          </p>
+
+        </div>
+
+
+        <div class="grid">
+
+          <div class="card">
+
+            <div class="card-icon">
+              ☁️
+            </div>
+
+            <h3>
+              Cloud Engineering
+            </h3>
+
+            <p>
+              Azure-focused infrastructure including resource groups,
+              networking, virtual machines, storage, identity and
+              cloud resource automation.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🏗️
+            </div>
+
+            <h3>
+              Infrastructure as Code
+            </h3>
+
+            <p>
+              Terraform-based provisioning with reusable modules,
+              variables, remote state, validation, planning and
+              repeatable infrastructure workflows.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🔄
+            </div>
+
+            <h3>
+              CI/CD Automation
+            </h3>
+
+            <p>
+              Automated build, validation, security and deployment
+              workflows using Azure Pipelines and GitHub Actions.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🐳
+            </div>
+
+            <h3>
+              Containers & Kubernetes
+            </h3>
+
+            <p>
+              Working knowledge of Docker, container images,
+              Kubernetes concepts, deployments, services and
+              Helm-based application packaging.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              📊
+            </div>
+
+            <h3>
+              Monitoring & Observability
+            </h3>
+
+            <p>
+              Exposure to Prometheus, Grafana and cloud cost
+              visibility for understanding application and
+              infrastructure health.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🛡️
+            </div>
+
+            <h3>
+              DevSecOps
+            </h3>
+
+            <p>
+              Security and quality checks integrated into development
+              and CI/CD workflows using scanning, linting and
+              secret-detection tools.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         SKILLS
+    ======================================================== -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            02 / technical stack
+          </div>
+
+          <h2>
+            Tools I build, automate & operate with.
+          </h2>
+
+          <p class="lead">
+            A practical DevOps stack covering cloud, IaC, containers,
+            CI/CD, GitOps, monitoring, security and automation.
+          </p>
+
+        </div>
+
+
+        <div class="skill-grid">
+
+
+          <!-- CLOUD -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                <i class="devicon-azure-plain"></i>
+              </div>
+
+              <div>
+                <h3>Cloud & Azure</h3>
+                <p>Cloud infrastructure & services</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                <i class="devicon-azure-plain"></i>
+                Microsoft Azure
+              </span>
+
+              <span class="chip">
+                Azure VMs
+              </span>
+
+              <span class="chip">
+                Azure VNet
+              </span>
+
+              <span class="chip">
+                Azure Storage
+              </span>
+
+              <span class="chip">
+                Azure RBAC
+              </span>
+
+              <span class="chip">
+                Azure Key Vault
+              </span>
+
+              <span class="chip">
+                Azure Monitor
+              </span>
+
+              <span class="chip">
+                Azure DevOps
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- IAC -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🏗️
+              </div>
+
+              <div>
+                <h3>Infrastructure as Code</h3>
+                <p>Provisioning & automation</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                <i class="devicon-terraform-plain"></i>
+                Terraform
+              </span>
+
+              <span class="chip">
+                Terraform Modules
+              </span>
+
+              <span class="chip">
+                Remote State
+              </span>
+
+              <span class="chip">
+                Terraform Backend
+              </span>
+
+              <span class="chip">
+                terraform plan
+              </span>
+
+              <span class="chip">
+                terraform validate
+              </span>
+
+              <span class="chip">
+                terraform apply
+              </span>
+
+              <span class="chip">
+                Variables
+              </span>
+
+              <span class="chip">
+                for_each
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTAINERS -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🐳
+              </div>
+
+              <div>
+                <h3>Containers & Kubernetes</h3>
+                <p>Containerization & orchestration</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                <i class="devicon-docker-plain"></i>
+                Docker
+              </span>
+
+              <span class="chip">
+                Dockerfile
+              </span>
+
+              <span class="chip">
+                Docker Images
+              </span>
+
+              <span class="chip">
+                Docker Compose
+              </span>
+
+              <span class="chip">
+                <i class="devicon-kubernetes-plain"></i>
+                Kubernetes
+              </span>
+
+              <span class="chip">
+                Pods
+              </span>
+
+              <span class="chip">
+                Deployments
+              </span>
+
+              <span class="chip">
+                Services
+              </span>
+
+              <span class="chip">
+                ConfigMaps
+              </span>
+
+              <span class="chip">
+                Secrets
+              </span>
+
+              <span class="chip">
+                <i class="devicon-helm-original"></i>
+                Helm
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- CI/CD -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🔄
+              </div>
+
+              <div>
+                <h3>CI/CD & Automation</h3>
+                <p>Build, test & deployment workflows</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                Azure Pipelines
+              </span>
+
+              <span class="chip">
+                Azure Repos
+              </span>
+
+              <span class="chip">
+                <i class="devicon-github-original"></i>
+                GitHub Actions
+              </span>
+
+              <span class="chip">
+                CI/CD
+              </span>
+
+              <span class="chip">
+                Build Pipelines
+              </span>
+
+              <span class="chip">
+                Release Pipelines
+              </span>
+
+              <span class="chip">
+                Pipeline Variables
+              </span>
+
+              <span class="chip">
+                Artifacts
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- GITOPS -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🔱
+              </div>
+
+              <div>
+                <h3>GitOps & Deployment</h3>
+                <p>Declarative delivery workflows</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                <i class="devicon-git-plain"></i>
+                Git
+              </span>
+
+              <span class="chip">
+                <i class="devicon-github-original"></i>
+                GitHub
+              </span>
+
+              <span class="chip">
+                Argo CD
+              </span>
+
+              <span class="chip">
+                GitOps
+              </span>
+
+              <span class="chip">
+                YAML
+              </span>
+
+              <span class="chip">
+                Manifest Management
+              </span>
+
+              <span class="chip">
+                Feature Branches
+              </span>
+
+              <span class="chip">
+                Pull Requests
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- MONITORING -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                📊
+              </div>
+
+              <div>
+                <h3>Monitoring & Observability</h3>
+                <p>Metrics, dashboards & visibility</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                Prometheus
+              </span>
+
+              <span class="chip">
+                Grafana
+              </span>
+
+              <span class="chip">
+                Azure Monitor
+              </span>
+
+              <span class="chip">
+                Application Monitoring
+              </span>
+
+              <span class="chip">
+                Metrics
+              </span>
+
+              <span class="chip">
+                Dashboards
+              </span>
+
+              <span class="chip">
+                OpenCost
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- DEVSECOPS -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🛡️
+              </div>
+
+              <div>
+                <h3>DevSecOps & Quality</h3>
+                <p>Security, scanning & code quality</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                tfsec
+              </span>
+
+              <span class="chip">
+                TFLint
+              </span>
+
+              <span class="chip">
+                TruffleHog
+              </span>
+
+              <span class="chip">
+                Trivy
+              </span>
+
+              <span class="chip">
+                Super-Linter
+              </span>
+
+              <span class="chip">
+                SonarQube
+              </span>
+
+              <span class="chip">
+                Secret Scanning
+              </span>
+
+              <span class="chip">
+                IaC Security
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- SCRIPTING -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                💻
+              </div>
+
+              <div>
+                <h3>Scripting & OS</h3>
+                <p>Automation & system administration</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                <i class="devicon-linux-plain"></i>
+                Linux
+              </span>
+
+              <span class="chip">
+                <i class="devicon-bash-plain"></i>
+                Bash
+              </span>
+
+              <span class="chip">
+                PowerShell
+              </span>
+
+              <span class="chip">
+                <i class="devicon-python-plain"></i>
+                Python
+              </span>
+
+              <span class="chip">
+                SSH
+              </span>
+
+              <span class="chip">
+                Linux CLI
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- TESTING -->
+
+          <div class="skill-card">
+
+            <div class="skill-header">
+
+              <div class="skill-header-icon">
+                🧪
+              </div>
+
+              <div>
+                <h3>Testing & Reliability</h3>
+                <p>Infrastructure quality & validation</p>
+              </div>
+
+            </div>
+
+            <div class="chips">
+
+              <span class="chip">
+                Terratest
+              </span>
+
+              <span class="chip">
+                Terraform Validate
+              </span>
+
+              <span class="chip">
+                Terraform Plan
+              </span>
+
+              <span class="chip">
+                TFLint
+              </span>
+
+              <span class="chip">
+                CI Quality Gates
+              </span>
+
+              <span class="chip">
+                YAML Validation
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         DEVOPS FLOW
+    ======================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            03 / workflow
+          </div>
+
+          <h2>
+            From code to cloud.
+          </h2>
+
+          <p class="lead">
+            A modern DevOps workflow connecting source control,
+            infrastructure, containers, automation and observability.
+          </p>
+
+        </div>
+
+
+        <div class="flow">
+
+          <div class="flow-item">
+
+            <i class="devicon-git-plain"></i>
+
+            <strong>Code</strong>
+            <span>Git / GitHub</span>
+
+            <div class="flow-arrow">→</div>
+
+          </div>
+
+
+          <div class="flow-item">
+
+            <i class="devicon-githubactions-plain"></i>
+
+            <strong>CI/CD</strong>
+            <span>Actions / Pipelines</span>
+
+            <div class="flow-arrow">→</div>
+
+          </div>
+
+
+          <div class="flow-item">
+
+            <i class="devicon-terraform-plain"></i>
+
+            <strong>Infrastructure</strong>
+            <span>Terraform / Azure</span>
+
+            <div class="flow-arrow">→</div>
+
+          </div>
+
+
+          <div class="flow-item">
+
+            <i class="devicon-docker-plain"></i>
+
+            <strong>Container</strong>
+            <span>Docker</span>
+
+            <div class="flow-arrow">→</div>
+
+          </div>
+
+
+          <div class="flow-item">
+
+            <i class="devicon-kubernetes-plain"></i>
+
+            <strong>Deploy</strong>
+            <span>Kubernetes / Argo CD</span>
+
+            <div class="flow-arrow">→</div>
+
+          </div>
+
+
+          <div class="flow-item">
+
+            <i class="devicon-grafana-plain"></i>
+
+            <strong>Observe</strong>
+            <span>Prometheus / Grafana</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         EXPERIENCE
+    ======================================================== -->
+
+    <section id="experience">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            04 / experience
+          </div>
+
+          <h2>
+            Where I've been building.
+          </h2>
+
+          <p class="lead">
+            Hands-on experience across Azure infrastructure,
+            Terraform automation, CI/CD and DevSecOps workflows.
+          </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="role">
+
+            <div class="role-meta">
+              JAN 2025 — PRESENT · NOIDA
+            </div>
+
+            <h3>
+              DevOps Engineer
+            </h3>
+
+            <div class="role-company">
+              DevOps Insider
+            </div>
+
+            <ul>
+
+              <li>
+                Built and optimized CI/CD pipelines using Azure
+                Pipelines and GitHub Actions.
+              </li>
+
+              <li>
+                Automated Azure infrastructure provisioning using
+                reusable Terraform configurations and modules.
+              </li>
+
+              <li>
+                Worked with Azure networking, virtual machines,
+                storage and cloud infrastructure components.
+              </li>
+
+              <li>
+                Integrated tfsec, TFLint, TruffleHog and
+                Super-Linter into CI/CD workflows.
+              </li>
+
+              <li>
+                Applied Infrastructure as Code validation and
+                testing practices using Terraform tooling and Terratest.
+              </li>
+
+              <li>
+                Automated operational tasks using Bash,
+                PowerShell and Python.
+              </li>
+
+              <li>
+                Worked with Git workflows including branches,
+                pull requests, repositories and collaborative development.
+              </li>
+
+              <li>
+                Explored containerization and modern deployment
+                workflows using Docker and Kubernetes concepts.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="role">
+
+            <div class="role-meta">
+              FULL STACK DEVELOPMENT · IMARTICUS LEARNING
+            </div>
+
+            <h3>
+              Java + MERN Stack
+            </h3>
+
+            <div class="role-company">
+              Full Stack Development Training & Projects
+            </div>
+
+            <p style="color:var(--muted); max-width:780px;">
+              Hands-on experience with Java, JavaScript, React,
+              Node.js and full-stack application development,
+              including application deployments and GitHub-based
+              development workflows.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         PROJECTS
+    ======================================================== -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            05 / projects
+          </div>
+
+          <h2>
+            Things I've shipped.
+          </h2>
+
+          <p class="lead">
+            Practical projects demonstrating application development,
+            deployment workflows and engineering fundamentals.
+          </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+          <!-- PROJECT 1 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 01
+              </div>
+
+              <div class="card-icon">
+                🛒
+              </div>
+
+              <h3>
+                Rx Retail Web Application
+              </h3>
+
+              <p>
+                Responsive React-based e-commerce frontend with
+                component-driven architecture, product listing,
+                optimized UI/UX and live deployment.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  React
+                </span>
+
+                <span class="chip">
+                  JavaScript
+                </span>
+
+                <span class="chip">
+                  Netlify
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://rx-ecommerces.netlify.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Live ↗
+              </a>
+
+              <a
+                href="https://github.com/singhshivaa/Rx-eCommerce_using_MERN-Stack"
+                target="_blank"
+                class="project-link"
+              >
+                Source ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROJECT 2 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 02
+              </div>
+
+              <div class="card-icon">
+                ✅
+              </div>
+
+              <h3>
+                To-Do Application
+              </h3>
+
+              <p>
+                Task management application with CRUD operations,
+                persistent Local Storage and responsive user interface.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  React
+                </span>
+
+                <span class="chip">
+                  CRUD
+                </span>
+
+                <span class="chip">
+                  Local Storage
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://todowith-react.netlify.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Live ↗
+              </a>
+
+              <a
+                href="https://github.com/singhshivaa/ToDo-with-react"
+                target="_blank"
+                class="project-link"
+              >
+                Source ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROJECT 3 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 03
+              </div>
+
+              <div class="card-icon">
+                📦
+              </div>
+
+              <h3>
+                Mobile Stock Management
+              </h3>
+
+              <p>
+                Inventory management application for tracking stock
+                in/out with CRUD operations and real-time stock visibility.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  CRUD
+                </span>
+
+                <span class="chip">
+                  Inventory
+                </span>
+
+                <span class="chip">
+                  Web App
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://mobile-stock-management.netlify.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Live ↗
+              </a>
+
+              <a
+                href="https://github.com/singhshivaa/Mobile_Stock-management-using-CRUD"
+                target="_blank"
+                class="project-link"
+              >
+                Source ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROJECT 4 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 04
+              </div>
+
+              <div class="card-icon">
+                ☁️
+              </div>
+
+              <h3>
+                Azure Infrastructure with Terraform
+              </h3>
+
+              <p>
+                Infrastructure as Code workflows for provisioning
+                Azure resources including resource groups, networking,
+                virtual machines and storage.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  Azure
+                </span>
+
+                <span class="chip">
+                  Terraform
+                </span>
+
+                <span class="chip">
+                  IaC
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://github.com/singhshivaa"
+                target="_blank"
+                class="project-link"
+              >
+                GitHub ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROJECT 5 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 05
+              </div>
+
+              <div class="card-icon">
+                🔄
+              </div>
+
+              <h3>
+                CI/CD Automation
+              </h3>
+
+              <p>
+                CI/CD workflow concepts covering source control,
+                validation, security checks, infrastructure planning
+                and automated delivery.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  Azure Pipelines
+                </span>
+
+                <span class="chip">
+                  GitHub Actions
+                </span>
+
+                <span class="chip">
+                  YAML
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://github.com/singhshivaa"
+                target="_blank"
+                class="project-link"
+              >
+                GitHub ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROJECT 6 -->
+
+          <div class="card project-card">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 06
+              </div>
+
+              <div class="card-icon">
+                🛡️
+              </div>
+
+              <h3>
+                DevSecOps Quality Pipeline
+              </h3>
+
+              <p>
+                Security and quality gates using IaC scanning,
+                linting, secret detection and automated validation
+                within CI/CD workflows.
+              </p>
+
+              <div class="chips" style="margin-top:17px;">
+
+                <span class="chip">
+                  tfsec
+                </span>
+
+                <span class="chip">
+                  TFLint
+                </span>
+
+                <span class="chip">
+                  TruffleHog
+                </span>
+
+                <span class="chip">
+                  Trivy
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-bottom">
+
+              <a
+                href="https://github.com/singhshivaa"
+                target="_blank"
+                class="project-link"
+              >
+                GitHub ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         EDUCATION
+    ======================================================== -->
+
+    <section id="education">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            06 / education
+          </div>
+
+          <h2>
+            Foundation & continuous learning.
+          </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎓
+            </div>
+
+            <h3>
+              B.Tech — AKTU, Lucknow
+            </h3>
+
+            <p>
+              2019 — 2023
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              ☁️
+            </div>
+
+            <h3>
+              Microsoft Learn Student Ambassador
+            </h3>
+
+            <p>
+              Technical exploration with focus on Azure,
+              DevOps and emerging cloud technologies.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎬
+            </div>
+
+            <h3>
+              Beyond Engineering
+            </h3>
+
+            <p>
+              Video editing and content production using
+              Adobe Premiere Pro.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-tag">
+            07 / contact
+          </div>
+
+          <h2>
+            Let's build something reliable.
+          </h2>
+
+          <p class="lead">
+            Interested in DevOps, Azure cloud infrastructure,
+            Terraform, CI/CD automation or cloud engineering?
+            Let's connect.
+          </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <a
+            class="contact-card"
+            href="mailto:singhshiva5555@gmail.com"
+          >
+
+            <div class="contact-icon">
+              ✉️
+            </div>
+
+            <div>
+
+              <strong>
+                Email
+              </strong>
+
+              <p>
+                singhshiva5555@gmail.com
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a
+            class="contact-card"
+            href="https://github.com/singhshivaa"
+            target="_blank"
+          >
+
+            <div class="contact-icon">
+              <i class="devicon-github-original"></i>
+            </div>
+
+            <div>
+
+              <strong>
+                GitHub
+              </strong>
+
+              <p>
+                github.com/singhshivaa
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a
+            class="contact-card"
+            href="tel:+916392922295"
+          >
+
+            <div class="contact-icon">
+              📱
+            </div>
+
+            <div>
+
+              <strong>
+                Phone
+              </strong>
+
+              <p>
+                +91 6392922295
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <a
+            class="contact-card"
+            href="https://www.linkedin.com/in/shivasinghit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Shiva Singh's LinkedIn profile"
+          >
+
+            <div class="contact-icon">
+              🔗
+            </div>
+
+            <div>
+
+              <strong>
+                LinkedIn
+              </strong>
+
+              <p>
+                Connect professionally
+              </p>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Shiva Singh ·
+      <span class="footer-accent">
+        DevOps & Cloud Engineer
+      </span>
+      · Built with HTML, CSS & ☕
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+
+  <a
+    href="#home"
+    class="top"
+    aria-label="Back to top"
+  >
+    ↑
+  </a>
+
+</body>
+</html>
