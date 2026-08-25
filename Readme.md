@@ -12,13 +12,16 @@
     <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 
-  <a href="https://www.linkedin.com/">
+  <a href="https://www.linkedin.com/in/shivasinghit/">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 
-  <a href="mailto:singhshiva5555@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
+ <a href="https://mail.google.com/mail/?view=cm&fs=1&to=singhshiva5555@gmail.com" target="_blank" rel="noopener noreferrer">
+  <img
+    src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"
+    alt="Email"
+  />
+</a>
 
   <a href="https://singhshivaa.github.io/singhshivaa/">
     <img src="https://img.shields.io/badge/Portfolio-Live-00A8FF?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
